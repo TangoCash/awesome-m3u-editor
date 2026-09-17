@@ -1781,6 +1781,7 @@ function parseM3U(content) {
     const groups = [];
     let header = '#EXTM3U';
     let currentItem = null;
+    let currentExtGrp = '';
 
     lines.forEach(rawLine => {
         const line = rawLine.trim();
@@ -1791,8 +1792,13 @@ function parseM3U(content) {
             return;
         }
 
+        if (line.toUpperCase().startsWith('#EXTGRP:')) {
+            currentExtGrp = cleanGroupName(line.slice('#EXTGRP:'.length).trim());
+            return;
+        }
+
         if (line.toUpperCase().startsWith('#EXTINF')) {
-            currentItem = parseExtinfLine(line);
+            currentItem = parseExtinfLine(line, currentExtGrp);
             return;
         }
 
@@ -1892,7 +1898,7 @@ function applyParsedPlaylist(parsed) {
     }
 }
 
-function parseExtinfLine(line) {
+function parseExtinfLine(line, fallbackGroup) {
     const commaIndex = line.indexOf(',');
     const metaPart = commaIndex >= 0 ? line.slice(0, commaIndex) : line;
     const name = commaIndex >= 0 ? line.slice(commaIndex + 1).trim() : 'Unnamed';
@@ -1911,7 +1917,7 @@ function parseExtinfLine(line) {
         tvgId: attrs['tvg-id'] || '',
         tvgName: attrs['tvg-name'] || '',
         tvgLogo: attrs['tvg-logo'] || '',
-        groupTitle: cleanGroupName(attrs['group-title']),
+        groupTitle: cleanGroupName(attrs['group-title'] || fallbackGroup),
         catchup: attrs.catchup || '',
         catchupType: attrs['catchup-type'] || '',
         catchupDays: attrs['catchup-days'] || '',
