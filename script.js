@@ -1917,7 +1917,11 @@ function parseExtinfLine(line, fallbackGroup) {
         tvgId: attrs['tvg-id'] || '',
         tvgName: attrs['tvg-name'] || '',
         tvgLogo: attrs['tvg-logo'] || '',
-        groupTitle: cleanGroupName(attrs['group-title'] || fallbackGroup),
+        groupTitle: cleanGroupName(
+            Object.prototype.hasOwnProperty.call(attrs, 'group-title')
+                ? attrs['group-title']
+                : fallbackGroup
+        ),
         catchup: attrs.catchup || '',
         catchupType: attrs['catchup-type'] || '',
         catchupDays: attrs['catchup-days'] || '',
