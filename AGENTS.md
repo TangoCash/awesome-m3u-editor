@@ -24,7 +24,7 @@ In-memory state in `script.js`:
 
 A channel (`ensureItem`) has: `_id`, `name`, `url`, `duration`, `tvgId`, `tvgName`, `tvgLogo`, `groupTitle`, catchup fields, `additionalAttributes` (unknown provider attrs, preserved), `status*`, `extraLines` (non-EXTINF comment lines between the inf line and the URL).
 
-Empty/missing `group-title` becomes `No Group`.
+Empty/missing `group-title` becomes `No Group`. A `#EXTGRP:Group` directive line also sets the group for the entries that follow it (until the next `#EXTGRP:` line); an explicit `group-title` attribute on an entry still wins over `#EXTGRP:`.
 
 Persist with `saveToLocalStorage()` after every successful edit. Re-render with `renderGroups()` / `renderItems()`. Enabling toolbar buttons belongs in `updateActionState()`.
 
