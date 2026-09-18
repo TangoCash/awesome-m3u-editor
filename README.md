@@ -26,6 +26,8 @@ Open a playlist, organize groups and channels, edit channel details, check strea
 - Loading overlay with real progress while a playlist is opened (reading the file, finding channels, building the list)
 - Warning before opening playlists larger than 100 MB, and a clear error if a file cannot be read
 - Empty or invalid files no longer wipe the current playlist or overwrite the playlist header
+- Show load progress when opening a playlist, and stop invalid files wiping the playlist (By @[bragisig](https://github.com/bragisig))
+- Add support for #EXTGRP (by @[TangoCash](https://github.com/TangoCash))
 
 ## Main features
 
