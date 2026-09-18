@@ -1,4 +1,4 @@
-# Awesome M3U Editor 2.2
+# Awesome M3U Editor 2.3
 
 [![GitHub license](https://img.shields.io/github/license/arazgray/awesome-m3u-editor)](https://github.com/arazgray/awesome-m3u-editor/blob/main/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/arazgray/awesome-m3u-editor)](https://github.com/arazgray/awesome-m3u-editor/stargazers)
@@ -10,9 +10,9 @@ Open a playlist, organize groups and channels, edit channel details, check strea
 🔗 **Live**: [https://arazgray.github.io/awesome-m3u-editor/](https://arazgray.github.io/awesome-m3u-editor/)
 
 ## Screenshot
-![screenshot](screenshot.png "Awesome M3U Editor 2.2")
+![screenshot](screenshot.png "Awesome M3U Editor 2.3")
 
-## What's new in 2.2 (20260903)
+## What's new in 2.3 (20260918)
 
 - New app toolbar: **Open**, **Save M3U**, **Import**, **Export**, **Clear**, and search
 - Drag and drop `.m3u` / `.m3u8` files onto the page to open them

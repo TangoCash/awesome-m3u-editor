@@ -55,10 +55,10 @@ Do not drop unknown `#EXTINF` attributes. Do not guess stream liveness when a ch
 
 ## Version
 
-Release id is `v2.2-YYYYMMDD`. It appears in:
+Release id is `v2.3-YYYYMMDD`. It appears in:
 
 - Cache-bust query strings on every local asset and CDN URL in `index.html`
-- The header meta line `v2.2 YYYYMMDD`
+- The header meta line `v2.3 YYYYMMDD`
 
 On a user-visible release, set YYYYMMDD to that day's date in every one of those places.
 
